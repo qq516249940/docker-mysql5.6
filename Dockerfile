@@ -1,8 +1,8 @@
 FROM debian:stretch
 #FROM debian:stretch-slim
 
-RUN mkdir ~/.gnupg
-RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
+#RUN mkdir ~/.gnupg
+#RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
