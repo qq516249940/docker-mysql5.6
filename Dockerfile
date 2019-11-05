@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:buster
 #FROM debian:stretch-slim
 
 RUN mkdir ~/.gnupg
