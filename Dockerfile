@@ -1,4 +1,5 @@
-FROM debian:stretch-slim
+FROM debian
+#FROM debian:stretch-slim
 
 RUN mkdir ~/.gnupg
 RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
