@@ -1,8 +1,4 @@
-FROM debian:stretch
-#FROM debian:stretch-slim
-
-#RUN mkdir ~/.gnupg
-#RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
+FROM debian:stretch-slim
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
@@ -74,7 +70,6 @@ RUN { \
 
 VOLUME /var/lib/mysql
 
-#COPY my_server.cnf /etc/mysql/conf.d/my_server.cnf
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]
